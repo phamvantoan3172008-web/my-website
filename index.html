@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Ngày Sinh Nhật 18/10 - Đặc Biệt Dành Riêng Cho Bạn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            position: relative;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            color: #fff;
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            max-width: 650px;
+            width: 90%;
+            margin: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #d81b60;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: #880e4f;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .message-box {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 12px;
+            color: #4a154b;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        button {
+            background: #e91e63;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        button:hover {
+            background: #c2185b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .hint {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .special-card {
+            margin-top: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            color: #4a154b;
+            border-radius: 16px;
+            padding: 20px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 8px 20px rgba(173, 41, 101, 0.12);
+            font-weight: 700;
+            line-height: 1.8;
+        }
+
+        .special-card strong {
+            color: #d81b60;
+        }
+
+        /* Hiệu ứng trái tim rơi */
+        .heart {
+            position: fixed;
+            top: 0;
+            left: 0;
+            color: #ff4081;
+            font-size: 20px;
+            animation: fall linear forwards;
+            z-index: 1;
+            user-select: none;
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translate3d(0, -10vh, 0) scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: translate3d(var(--dx, 30px), 105vh, 0) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 28px 20px;
+                margin: 16px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Gửi Tặng Bạn!</h1>
+        <h2>Chúc mừng Sinh Nhật thật nhiều niềm vui và hạnh phúc ✨</h2>
+        
+        <div class="message-box" id="msgContent">
+            Nhấn các nút bên dưới hoặc sử dụng bàn phím để khám phá những điều bất ngờ dành riêng cho bạn nhé! 👇
+        </div>
+
+        <div class="controls">
+            <button onclick="changeMessage(1)">💌 Lời Chúc (Phím 1)</button>
+            <button onclick="changeMessage(2)">🌸 Khen Ngợi (Phím 2)</button>
+            <button onclick="changeMessage(3)">☕ Lời Nhắn Nhủ (Phím 3)</button>
+            <button onclick="triggerSurprise()">🎁 Bất Ngờ (Phím Space)</button>
+        </div>
+
+        <div class="special-card">
+            <strong>Hà Linh thân mến,</strong><br>
+            Chúc Hà Linh luôn xinh đẹp, vui vẻ, mạnh mẽ và luôn được yêu thương. Mong mỗi ngày của Hà Linh đều tràn ngập nụ cười, thành công và những điều tốt đẹp nhất. Hãy luôn là phiên bản tự tin, dịu dàng và tỏa sáng nhất của chính mình. 💖✨
+        </div>
+
+        <div class="hint">
+            💡 <strong>Mẹo nhỏ:</strong> Bạn có thể dùng phím <b>1, 2, 3</b> và phím <b>Cách (Space)</b> trực tiếp trên bàn phím để tương tác nhé!
+        </div>
+    </div>
+
+    <script>
+        const messages = {
+            1: "Chúc bạn ngày Sinh Nhật tràn ngập hoa, quà và những nụ cười tươi tắn nhất. Mong rằng tuổi mới hay chặng đường sắp tới, mọi điều tốt đẹp, may mắn và bình an sẽ luôn mỉm cười với bạn! 🌸",
+            2: "Bạn biết không, mỗi khi nhìn thấy nụ cười của bạn, mọi mệt mỏi đều tan biến hết. Bạn là một cô gái cực kỳ thông minh, dịu dàng và mang năng lượng rất tích cực đến cho mọi người xung quanh đấy! ✨",
+            3: "Nhớ là phải luôn chăm sóc bản thân thật tốt nha, đừng thức khuya quá và phải ăn uống đầy đủ đấy. Dù có chuyện gì xảy ra thì cứ tự tin bước tiếp, vì bạn luôn làm rất tốt rồi! 💪💖",
+            surprise: "🎉 Tar-da! Chúc cô gái của ngày Sinh Nhật luôn giữ mãi nét rạng rỡ, tỏa sáng theo cách riêng của mình và có một ngày thật trọn vẹn nhé! Gửi ngàn chiếc ôm áp lực tan biến! 🤗💖"
+        };
+
+        function changeMessage(id) {
+            const box = document.getElementById('msgContent');
+            if (!box || !messages[id]) return;
+            box.style.opacity = 0;
+            setTimeout(() => {
+                box.innerText = messages[id];
+                box.style.opacity = 1;
+            }, 200);
+            createHearts(5);
+        }
+
+        function triggerSurprise() {
+            const box = document.getElementById('msgContent');
+            if (!box) return;
+            box.style.opacity = 0;
+            setTimeout(() => {
+                box.innerText = messages['surprise'];
+                box.style.opacity = 1;
+            }, 200);
+            createHearts(20);
+        }
+
+        // Tạo hiệu ứng trái tim bay ngẫu nhiên
+        function createHearts(num) {
+            const width = window.innerWidth || 1200;
+            for (let i = 0; i < num; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = ['❤️', '💖', '🌸', '✨', '💐'][Math.floor(Math.random() * 5)];
+                heart.style.left = Math.random() * width + 'px';
+                heart.style.top = '-20px';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                heart.style.setProperty('--dx', ((Math.random() * 100) - 50) + 'px');
+
+                const duration = Math.random() * 3 + 2;
+                heart.style.animationDuration = duration + 's';
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, duration * 1000);
+            }
+        }
+
+        // Lắng nghe các thao tác phím từ người dùng
+        document.addEventListener('keydown', function(event) {
+            if (event.key === '1') {
+                changeMessage(1);
+            } else if (event.key === '2') {
+                changeMessage(2);
+            } else if (event.key === '3') {
+                changeMessage(3);
+            } else if (event.key === ' ' || event.code === 'Space') {
+                event.preventDefault(); // Ngăn trình duyệt cuộn trang khi ấn Space
+                triggerSurprise();
+            }
+        });
+
+        // Tự động thả vài trái tim khi vừa vào trang, nhưng ít hơn để tránh giật
+        setInterval(() => {
+            createHearts(1);
+        }, 1800);
+    </script>
+</body>
+</html>
+
+
+
+
+
